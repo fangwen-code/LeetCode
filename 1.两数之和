@@ -1,1 +1,44 @@
 
+
+
+
+
+
+
+
+
+
+
+
+###静态注释
+def foo(text:str, max_len:'int>0'=80) -> str:
+    """This is a descriptional document, when defined help, it would be show the content"""
+    return True
+    
+"""
+函数申明中，text:str
+text是参数  ：冒号后面str是参数注释
+如果参数有默认值，还要给注释，如：max_len: 'int>0'=80
+->str 是函数返回值的注释
+这些注释信息都是函数的元信息， 保存在f.__annotations__字典中
+python对注释信息和f.__annotations__的一致性，不做任何检查，强制、验证
+
+###动态注释————在函数中或是装饰器中动态的增加 删除 更改 注释内容
+1、
+def foo():
+    """This is the function foo"""
+2、google style
+def foo():
+    """
+    This is a google style docs.
+    
+    Parameters:
+      parma1 - this is the first param
+      parma2 - this is a second param 
+      
+    Returns:
+      This is a description of what is returned
+      
+    Raises:
+      KeyError - raises an exception
+    """
